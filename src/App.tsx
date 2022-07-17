@@ -1,4 +1,4 @@
-import { Breadcrumb, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import React from 'react';
 
 const { Header, Content, Footer } = Layout;
@@ -21,11 +21,14 @@ const App: React.FC = () => (
       />
     </Header>
     <Content>
-      <section className="search-box-parent" style={{background: 'url(img/nba-ball-general-view-iso.jpg)'}}>
-        {/* <img src="img/nba-ball-general-view-iso.jpg" className="nba-01" alt="main-01"/> */}
-        <section className="search-box">
-          검색 창
-        </section>
+      <section className="search-box-section bs">
+        <div className="search-box-child-1-div bs">
+          <div></div>
+          <div></div>
+          <section className="search-box">
+            검색 창
+          </section>
+        </div>
       </section>
       <div className="site-layout-content">Content</div>
     </Content>
