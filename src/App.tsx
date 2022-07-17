@@ -1,26 +1,37 @@
+import { Breadcrumb, Layout, Menu } from 'antd';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const { Header, Content, Footer } = Layout;
+
+const App: React.FC = () => (
+  <Layout className="layout">
+    <Header>
+      <div className="logo" />
+      <Menu
+        theme="light"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        items={new Array(15).fill(null).map((_, index) => {
+          const key = index + 1;
+          return {
+            key,
+            label: `nav ${key}`,
+          };
+        })}
+      />
+    </Header>
+    <Content>
+      <section className="search-box-parent" style={{background: 'url(img/nba-ball-general-view-iso.jpg)'}}>
+        {/* <img src="img/nba-ball-general-view-iso.jpg" className="nba-01" alt="main-01"/> */}
+        <section className="search-box">
+          검색 창
+        </section>
+      </section>
+      <div className="site-layout-content">Content</div>
+    </Content>
+    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+  </Layout>
+);
+
 
 export default App;
