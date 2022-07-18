@@ -1,6 +1,6 @@
 import { Layout, Menu } from 'antd';
 import React from 'react';
-
+import SelectCategory from "./Select";
 const { Header, Content, Footer } = Layout;
 
 const App: React.FC = () => (
@@ -25,8 +25,9 @@ const App: React.FC = () => (
         <div className="search-box-child-1-div bs">
           <div></div>
           <div></div>
+          
           <section className="search-box">
-            검색 창
+            <SelectCategory/>
           </section>
         </div>
       </section>

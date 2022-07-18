@@ -53,8 +53,9 @@ code {
   max-width: 1184px;
   height: 220px;
   background-color: aquamarine;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: calc(56px + 1rem) calc(60px + 2.5rem) 48px;
+  /* row-gap: 1rem 2.5rem; */
   width: 100%;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
@@ -63,26 +64,21 @@ code {
   align-items: center;
 }
 
-.search-box-child-1-div :nth-child(1) {
-  height: 56px;
+.search-box-child-1-div > :nth-child(1) {
+  height: -webkit-fill-available;
   margin-bottom: 1rem;
 }
 
-.search-box-child-1-div :nth-child(2) {
-  height: 30px;
+.search-box-child-1-div > :nth-child(2) {
+  height: -webkit-fill-available;
   margin-bottom: 2.5rem;
 }
 
-.search-box-child-1-div :nth-child(3) {
-  height: 56px;
-  margin-bottom: 1rem;
-}
 .search-box {
-  position: absolute;
-  width: 1057px;
-  height: 100px;
+  height:48px;
   background: #FFFFFF;
   box-shadow: 0px 35px 26px -21px rgba(0, 0, 0, 0.0008);
   border-radius: 56px;
+  width: 585px;
 }
 
