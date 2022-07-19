@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import React from 'react';
 import SelectCategory from "./Select";
+import SearchInput from './SearchInput'
 const {Content } = Layout;
 
 const contents: React.FC = () => (
@@ -10,9 +11,8 @@ const contents: React.FC = () => (
             <div></div>
             <div></div>
             <div  className="search-box">
-            <section>
               <SelectCategory/>
-            </section>
+              <SearchInput />
             </div>
           </div>
         </section>

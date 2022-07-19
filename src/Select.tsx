@@ -8,15 +8,12 @@ const handleChange = (value: string) => {
 
 const selectCategory: React.FC = () => (
     <Select
-      defaultValue="lucy"
-      style={{
-        width: 120,
-      }}
+      defaultValue="all"
       onChange={handleChange}
     >
-      <Option value="jack">Jack</Option>
-      <Option value="lucy">Lucy</Option>
-      <Option value="Yiminghe">yiminghe</Option>
+      <Option value="all">전체</Option>
+      <Option value="team">팀</Option>
+      <Option value="palyer">선수</Option>
     </Select>
 );
 
