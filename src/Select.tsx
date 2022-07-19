@@ -6,7 +6,7 @@ const handleChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
-const SelectCategory = () => (
+const selectCategory: React.FC = () => (
     <Select
       defaultValue="lucy"
       style={{
@@ -20,4 +20,4 @@ const SelectCategory = () => (
     </Select>
 );
 
-export default SelectCategory;
+export default selectCategory;
