@@ -43,6 +43,16 @@ code {
 .bs {
   box-sizing: border-box;
 }
+
+.ps {
+  max-width: 1184px;
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+}
 .search-box-section {
     padding-top: 10rem;
     /* background-size: 100%;
@@ -50,18 +60,10 @@ code {
 }
 
 .search-box-child-1-div {
-  max-width: 1184px;
   height: 220px;
   background-color: aquamarine;
   display: grid;
   grid-template-rows: calc(56px + 1rem) calc(60px + 2.5rem) 48px;
-  /* row-gap: 1rem 2.5rem; */
-  width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  margin-right: auto;
-  margin-left: auto;
-  align-items: center;
 }
 
 .search-box-child-1-div > :nth-child(1) {
@@ -78,7 +80,7 @@ code {
   height:48px;
   background: #FFFFFF;
   box-shadow: 0px 35px 26px -21px rgba(0, 0, 0, 0.0008);
-  border-radius: 56px;
+  /* border-radius: 56px; */
   width: 585px;
 
   display: grid;
