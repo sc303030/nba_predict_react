@@ -5,7 +5,7 @@ const information: React.FC = () => (
 
     <div className="wrapper">
     <div className="container">
-        <input className="checkbox-all" id="all" type="radio" name="checkbox" checked={false}/>
+        <input className="checkbox-all" id="all" type="radio" name="checkbox" checked={true}/>
         <label htmlFor="all">all</label>
         <input className="checkbox-js" id="js" type="radio" name="checkbox"/>
         <label htmlFor="js">javascript</label>
@@ -20,21 +20,6 @@ const information: React.FC = () => (
         <div className="seperator"></div>
 
         <div className="cards">
-        <div className="project js"></div>
-        <div className="project html"></div>
-        <div className="project react"></div>
-        <div className="project vue"></div>
-        <div className="project angular"></div>
-        <div className="project js"></div>
-        <div className="project html"></div>
-        <div className="project react"></div>
-        <div className="project vue"></div>
-        <div className="project angular"></div>
-        <div className="project js"></div>
-        <div className="project html"></div>
-        <div className="project react"></div>
-        <div className="project vue"></div>
-        <div className="project angular"></div>
         <div className="project js"></div>
         <div className="project html"></div>
         <div className="project react"></div>

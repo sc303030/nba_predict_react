@@ -19,7 +19,7 @@ code {
   background-color: #fff;
 }
 .site-layout-content {
-  min-height: 280px;
+  /* min-height: 280px; */
   padding: 24px;
   background: #fff;
 }
