@@ -110,6 +110,7 @@ height: 30px;
 display: flex;
 flex-wrap: wrap;
 width: 800px;
+justify-content: space-between;
 }
 
 .project {

@@ -5,7 +5,7 @@ const information: React.FC = () => (
 
     <div className="wrapper">
     <div className="container">
-        <input className="checkbox-all" id="all" type="radio" name="checkbox" checked={true}/>
+        <input className="checkbox-all" id="all" type="radio" name="checkbox" defaultChecked={true}/>
         <label htmlFor="all">all</label>
         <input className="checkbox-js" id="js" type="radio" name="checkbox"/>
         <label htmlFor="js">javascript</label>

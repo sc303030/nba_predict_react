@@ -13,7 +13,7 @@ const contents: React.FC = () => (
             <div></div>
             <div  className="search-box">
               <SelectCategory/>
-              <SearchInput />
+              <SearchInput/>
             </div>
           </div>
         </section>

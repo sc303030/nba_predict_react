@@ -1,13 +1,24 @@
 import { Input, Space } from 'antd';
 import React from 'react';
-const { Search } = Input;
+import {
+  useRecoilState,
+} from 'recoil';
+import {SelectValueState} from './SelectValue';
 
-const onSearch = (value: string) => console.log(value);
 
-const searchInput: React.FC = () => (
+
+
+
+
+const SearchInput= ():JSX.Element  => (
+  const [text, setSearchValue] = useRecoilState<string>(SelectValueState);
+
+  const { Search } = Input;
+  const onSearch = (value: string) => console.log(value);
+
   <Space direction="vertical">
     <Search placeholder="input search text" onSearch={onSearch} enterButton />
   </Space>
 );
 
-export default searchInput;
+export default SearchInput;
