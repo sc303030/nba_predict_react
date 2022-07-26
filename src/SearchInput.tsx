@@ -10,15 +10,17 @@ import {SelectValueState} from './SelectValue';
 
 
 
-const SearchInput= ():JSX.Element  => (
-  const [text, setSearchValue] = useRecoilState<string>(SelectValueState);
-
-  const { Search } = Input;
-  const onSearch = (value: string) => console.log(value);
-
-  <Space direction="vertical">
-    <Search placeholder="input search text" onSearch={onSearch} enterButton />
-  </Space>
-);
+const SearchInput = (): JSX.Element  => {
+    const [searchValue, setSearchValue] = useRecoilState<string>(SelectValueState);
+    const log_test = (val:string) => {
+    }
+    const { Search } = Input;
+    const onSearch = (value: string) => log_test(value);
+    return (
+      <Space direction="vertical">
+        <Search placeholder="input search text" onSearch={onSearch} enterButton />
+      </Space>
+    )
+  };
 
 export default SearchInput;

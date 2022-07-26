@@ -12,8 +12,11 @@ const selectCategory: React.FC = () => (
       onChange={handleChange}
     >
       <Option value="all">전체</Option>
-      <Option value="team">팀</Option>
-      <Option value="palyer">선수</Option>
+      <Option value="yellow">노란색</Option>
+      <Option value="orange">주황색</Option>
+      <Option value="blue">하늘색</Option>
+      <Option value="green">초록색</Option>
+      <Option value="red">빨간색</Option>
     </Select>
 );
 
