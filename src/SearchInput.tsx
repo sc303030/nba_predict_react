@@ -3,15 +3,13 @@ import React from 'react';
 import {
   useRecoilState,
 } from 'recoil';
-import {SelectValueState} from './SelectValue';
-
-
+import {selectValueState} from './SelectValue';
 
 
 
 
 const SearchInput = (): JSX.Element  => {
-    const [searchValue, setSearchValue] = useRecoilState<string>(SelectValueState);
+    const [searchValue, setSearchValue] = useRecoilState<string>(selectValueState);
     const log_test = (val:string) => {
     }
     const { Search } = Input;

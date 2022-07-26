@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
 import React from 'react';
-import SelectCategory from "./Select";
+import SelectCategory from "./SelectCategory";
 import SearchInput from './SearchInput';
 import Information from "./Information";
 const {Content } = Layout;
