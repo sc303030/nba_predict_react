@@ -18,7 +18,7 @@ const SelectCategory = (): JSX.Element => {
   const { Option } = Select;
     return (
       <Select
-        defaultValue="all"
+        defaultValue={searchValue}
         onChange={handleChange}
       >
         <Option value="all">전체</Option>

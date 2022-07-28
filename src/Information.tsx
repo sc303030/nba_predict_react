@@ -5,11 +5,13 @@ import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import {
     useRecoilValue,
   } from 'recoil';
-  import {selectValueState} from './SelectValue';
+import {selectValueState, testvalue} from './SelectValue';
+import { useDidMountEffect } from "./useDidMountEffect";
 const Information: React.FC = () => {
 
     const searchValue = useRecoilValue<string>(selectValueState);
-    const changeCheckboxSelect = useEffect ((): void => {
+    const testValue = useRecoilValue<string>(testvalue);
+    const test = () => {
       const checkboxlist : NodeListOf<Element>  = document.getElementsByName('checkbox');
       const project = document.getElementsByClassName("project");
       const checkbox_yellow = document.getElementsByClassName('checkbox-all');
@@ -25,10 +27,13 @@ const Information: React.FC = () => {
       //   // eClassName
       // })
 
-      console.log(checkboxlist)
+      // console.log(checkboxlist)
       console.log(searchValue)
-      console.log(project)
-      }, [searchValue]);
+      // console.log(project)
+    }
+    useDidMountEffect ((): void => {
+      test();
+      }, [testValue]);
     const onChange = (e: CheckboxChangeEvent) => {
         console.log(`checked = ${e.target.checked}`);
       };
