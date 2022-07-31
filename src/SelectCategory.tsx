@@ -22,11 +22,10 @@ const SelectCategory = (): JSX.Element => {
         onChange={handleChange}
       >
         <Option value="all">전체</Option>
-        <Option value="yellow">노란색</Option>
-        <Option value="orange">주황색</Option>
-        <Option value="blue">하늘색</Option>
-        <Option value="green">초록색</Option>
-        <Option value="red">빨간색</Option>
+        <Option value="player">선수</Option>
+        <Option value="guard">가드</Option>
+        <Option value="forward">포워드</Option>
+        <Option value="center">센터</Option>
       </Select>
     )
   };

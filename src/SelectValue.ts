@@ -7,7 +7,3 @@ export const selectValueState = atom<string>({
     default : "all",
 })
 
-export const testvalue = atom<string>({
-  key: "test",
-  default : "test",
-})
