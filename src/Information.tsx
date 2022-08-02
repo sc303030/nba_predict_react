@@ -39,7 +39,11 @@ const Information: React.FC = () => {
             <div className="seperator"></div>
     
             <div className="cards">
-                <div className="project player"></div>
+                <div className="project player bg-size"></div>
+                <div className="project guard"></div>
+                <div className="project forward"></div>
+                <div className="project center"></div>
+                {/* <div className="project player"></div>
                 <div className="project guard"></div>
                 <div className="project forward"></div>
                 <div className="project center"></div>
@@ -50,11 +54,7 @@ const Information: React.FC = () => {
                 <div className="project player"></div>
                 <div className="project guard"></div>
                 <div className="project forward"></div>
-                <div className="project center"></div>
-                <div className="project player"></div>
-                <div className="project guard"></div>
-                <div className="project forward"></div>
-                <div className="project center"></div>
+                <div className="project center"></div>  */}
             </div>
         </div>
         </div>

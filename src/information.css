@@ -126,6 +126,7 @@ border: 3px solid #f1c40f;
 
 .project.player {
 border: 3px solid #ff932b;
+background-image: url("img/Stephen_Curry.jpg");
 }
 
 .project.guard {
@@ -165,7 +166,7 @@ border-width: 0;
 .checkbox-center:checked ~ .cards .project.center {
 opacity: 1;
 min-height: 140px;
-min-width: calc(22% - 28px);
+min-width: calc(25% - 28px);
 padding: 0 10px;
 margin-left: 10px;
 margin-right: 10px;
@@ -188,4 +189,10 @@ label {
     flex-direction: column;
     width: auto;
 }
+}
+
+
+.bg-size {
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
