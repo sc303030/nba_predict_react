@@ -7,6 +7,7 @@ import {
   } from 'recoil';
 import {selectValueState} from './SelectValue';
 import { useDidMountEffect } from "./useDidMountEffect";
+import axios from 'axios';
 const Information: React.FC = () => {
     const searchValue = useRecoilValue<string>(selectValueState);
     const boxChange =() => {
@@ -22,11 +23,21 @@ const Information: React.FC = () => {
 
     useDidMountEffect ((): void => {
       boxChange();
+      getPlayers();
     }, [searchValue]);
 
     const onChange = (e: CheckboxChangeEvent) => {
         console.log(`checked = ${e.target.checked}`);
       };
+
+    async function getPlayers() {
+      try{
+        const response = await axios.get("http://127.0.0.1:8000/nba/players");
+        console.log(response);
+      } catch (error){
+        console.log(error);
+      }
+    }
     return (
 
         <div className="wrapper">
@@ -43,18 +54,6 @@ const Information: React.FC = () => {
                 <div className="project guard"></div>
                 <div className="project forward"></div>
                 <div className="project center"></div>
-                {/* <div className="project player"></div>
-                <div className="project guard"></div>
-                <div className="project forward"></div>
-                <div className="project center"></div>
-                <div className="project player"></div>
-                <div className="project guard"></div>
-                <div className="project forward"></div>
-                <div className="project center"></div>
-                <div className="project player"></div>
-                <div className="project guard"></div>
-                <div className="project forward"></div>
-                <div className="project center"></div>  */}
             </div>
         </div>
         </div>
