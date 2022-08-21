@@ -23,7 +23,6 @@ const Information: React.FC = () => {
 
     useDidMountEffect ((): void => {
       boxChange();
-      getPlayers();
     }, [searchValue]);
 
     const onChange = (e: CheckboxChangeEvent) => {
@@ -32,12 +31,15 @@ const Information: React.FC = () => {
 
     async function getPlayers() {
       try{
-        const response = await axios.get("http://127.0.0.1:8000/nba/players");
+        const response = await axios.get("/nba/players.json");
         console.log(response);
       } catch (error){
         console.log(error);
       }
     }
+    useEffect((): void => {
+      getPlayers();
+    }, [])
     return (
 
         <div className="wrapper">
