@@ -1,5 +1,5 @@
 
-import React, {useEffect } from 'react';
+import React, {useEffect, useState } from 'react';
 import "./information.css"
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import {
@@ -10,6 +10,8 @@ import { useDidMountEffect } from "./useDidMountEffect";
 import axios from 'axios';
 const Information: React.FC = () => {
     const searchValue = useRecoilValue<string>(selectValueState);
+    const [checkbox_list, setcheckbox_list] = useState<any []>([]);
+    const [cards_list, setcards_list] = useState<any []>([]);
     const boxChange =() => {
       const checkboxlist : NodeListOf<Element>  = document.getElementsByName('checkbox');
       for (let  item of checkboxlist as any) {
@@ -31,13 +33,21 @@ const Information: React.FC = () => {
 
     async function getPlayers() {
       try{
+        let _check = []
+        let _cards  = []
         const response = await axios.get("/nba/players.json");
-        console.log(response);
+        const player_data = response["data"];
+        for (let info of player_data) {
+          _check.push(<input className="checkbox-guard" id={`${info["name"]}`} type="radio" name="checkbox" defaultChecked={false}/>);
+          _cards.push(<div className="project guard"></div>);
+        }
+        setcheckbox_list(_check);
+        setcards_list(_cards);
       } catch (error){
         console.log(error);
       }
     }
-    useEffect((): void => {
+    useEffect(() =>{
       getPlayers();
     }, [])
     return (
@@ -45,17 +55,19 @@ const Information: React.FC = () => {
         <div className="wrapper">
         <div className="container">
             <input className="checkbox-all" id="all" type="radio" name="checkbox" defaultChecked={true}/>
-            <input className="checkbox-player" id="player" type="radio" name="checkbox" defaultChecked={false}/>
+            {/* <input className="checkbox-player" id="player" type="radio" name="checkbox" defaultChecked={false}/>
             <input className="checkbox-guard" id="guard" type="radio" name="checkbox" defaultChecked={false}/>
             <input className="checkbox-forward" id="forward" type="radio" name="checkbox" defaultChecked={false}/>
-            <input className="checkbox-center" id="center" type="radio" name="checkbox" defaultChecked={false}/>
+            <input className="checkbox-center" id="center" type="radio" name="checkbox" defaultChecked={false}/> */}
+            {checkbox_list}
             <div className="seperator"></div>
     
             <div className="cards">
+              {cards_list}
                 <div className="project player bg-size"></div>
-                <div className="project guard"></div>
+                {/* <div className="project guard"></div>
                 <div className="project forward"></div>
-                <div className="project center"></div>
+                <div className="project center"></div> */}
             </div>
         </div>
         </div>
