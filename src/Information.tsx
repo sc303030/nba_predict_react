@@ -39,7 +39,10 @@ const Information: React.FC = () => {
         const player_data = response["data"];
         for (let info of player_data) {
           _check.push(<input className="checkbox-guard" id={`${info["name"]}`} type="radio" name="checkbox" defaultChecked={false}/>);
-          _cards.push(<div className="project guard"></div>);
+          _cards.push(<div className="project guard" style={{ 
+            backgroundImage: `url(${info["image"]})` ,
+            backgroundRepeat: "round"
+          }}></div>);
         }
         setcheckbox_list(_check);
         setcards_list(_cards);
@@ -55,19 +58,9 @@ const Information: React.FC = () => {
         <div className="wrapper">
         <div className="container">
             <input className="checkbox-all" id="all" type="radio" name="checkbox" defaultChecked={true}/>
-            {/* <input className="checkbox-player" id="player" type="radio" name="checkbox" defaultChecked={false}/>
-            <input className="checkbox-guard" id="guard" type="radio" name="checkbox" defaultChecked={false}/>
-            <input className="checkbox-forward" id="forward" type="radio" name="checkbox" defaultChecked={false}/>
-            <input className="checkbox-center" id="center" type="radio" name="checkbox" defaultChecked={false}/> */}
             {checkbox_list}
-            <div className="seperator"></div>
-    
             <div className="cards">
               {cards_list}
-                <div className="project player bg-size"></div>
-                {/* <div className="project guard"></div>
-                <div className="project forward"></div>
-                <div className="project center"></div> */}
             </div>
         </div>
         </div>
