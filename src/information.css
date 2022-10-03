@@ -72,29 +72,39 @@ width: calc(100% - 24px);
 background-color: hotpink;
 }
 
-.checkbox-team:checked + label:after,
-.checkbox-team:not(:checked) + label:after {
-background-color: #f1c40f;
-}
-
-.checkbox-player:checked + label:after,
-.checkbox-player:not(:checked) + label:after {
-background-color: #ff932b;
-}
-
 .checkbox-guard:checked + label:after,
 .checkbox-guard:not(:checked) + label:after {
-background-color: #64e1fe;
+background-color: red;
+}
+
+.checkbox-guard-forward:checked + label:after,
+.checkbox-guard-forward:not(:checked) + label:after {
+background-color: orange;
 }
 
 .checkbox-forward:checked + label:after,
 .checkbox-forward:not(:checked) + label:after {
-background-color: #6edbbe;
+background-color: yellow;
+}
+
+.checkbox-forward-guard:checked + label:after,
+.checkbox-forward-guard:not(:checked) + label:after {
+background-color: green;
+}
+
+.checkbox-forward-center:checked + label:after,
+.checkbox-forward-center:not(:checked) + label:after {
+background-color: blue;
 }
 
 .checkbox-center:checked + label:after,
 .checkbox-center:not(:checked) + label:after {
-background-color: #e75139;
+background-color: purple;
+}
+
+.checkbox-center-forward:checked + label:after,
+.checkbox-center-forward:not(:checked) + label:after {
+background-color: pink;
 }
 
 .checkbox-all:checked + label {
@@ -120,32 +130,43 @@ box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
 transition: all 0.3s linear;
 }
 
-.project.team {
-border: 3px solid #f1c40f;
-}
-
-.project.player {
-border: 3px solid #ff932b;
-background-image: url("img/Stephen_Curry.jpg");
-}
-
 .project.guard {
-border: 3px solid #64e1fe;
+border: 3px solid red;
+}
+
+.project.guard-forward {
+border: 3px solid orange;
 }
 
 .project.forward {
-border: 3px solid #6edbbe;
+border: 3px solid yellow;
+}
+
+.project.forward-guard {
+border: 3px solid green;
+}
+
+.project.forward-center {
+border: 3px solid blue;
 }
 
 .project.center {
-border: 3px solid #e75139;
+    border: 3px solid purple;
+}
+.project.center-forward {
+    border: 3px solid pink;
 }
 
-.project.team,
-.project.player,
+
+
 .project.guard,
+.project.guard-forward,
 .project.forward,
-.project.center {
+.project.forward-guard,
+.project.forward-center,
+.project.center,
+.project.center-forward
+ {
 opacity: 0;
 transform: scale(0);
 padding: 0;
@@ -154,16 +175,20 @@ visibility: hidden;
 border-width: 0;
 }
 
-.checkbox-all:checked ~ .cards .project.team,
-.checkbox-all:checked ~ .cards .project.player,
 .checkbox-all:checked ~ .cards .project.guard,
+.checkbox-all:checked ~ .cards .project.guard-forward,
 .checkbox-all:checked ~ .cards .project.forward,
+.checkbox-all:checked ~ .cards .project.forward-guard,
+.checkbox-all:checked ~ .cards .project.forward-center,
 .checkbox-all:checked ~ .cards .project.center,
-.checkbox-team:checked ~ .cards .project.team,
-.checkbox-player:checked ~ .cards .project.player,
+.checkbox-all:checked ~ .cards .project.center-forward,
 .checkbox-guard:checked ~ .cards .project.guard,
+.checkbox-guard-forward:checked ~ .cards .project.guard-forward,
 .checkbox-forward:checked ~ .cards .project.forward,
-.checkbox-center:checked ~ .cards .project.center {
+.checkbox-forward-guard:checked ~ .cards .project.forward-guard,
+.checkbox-forward-center:checked ~ .cards .project.forward-center,
+.checkbox-center:checked ~ .cards .project.center,
+.checkbox-center-forward:checked ~ .cards .project.center-forward {
 opacity: 1;
 min-height: 140px;
 min-width: calc(25% - 28px);

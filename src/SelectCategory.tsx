@@ -21,11 +21,14 @@ const SelectCategory = (): JSX.Element => {
         defaultValue={searchValue}
         onChange={handleChange}
       >
-        <Option value="all">전체</Option>
-        <Option value="player">선수</Option>
-        <Option value="guard">가드</Option>
-        <Option value="forward">포워드</Option>
-        <Option value="center">센터</Option>
+        <Option value="checkbox-all">전체</Option>
+        <Option value="checkbox-guard">가드</Option>
+        <Option value="checkbox-guard-forward">가드-포워드</Option>
+        <Option value="checkbox-forward">포워드</Option>
+        <Option value="checkbox-forward-guard">포워드-가드</Option>
+        <Option value="checkbox-forward-center">포워드-센터</Option>
+        <Option value="checkbox-center">센터</Option>
+        <Option value="checkbox-center-forward">센터-포워드</Option>
       </Select>
     )
   };

@@ -16,11 +16,24 @@ const Information: React.FC = () => {
       const checkboxlist : NodeListOf<Element>  = document.getElementsByName('checkbox');
       for (let  item of checkboxlist as any) {
         item.checked = false;
-        const eClassName:String = item.getAttribute('class')?.split('-')[1];
+        const eClassName:String = item.getAttribute('class');
+        console.log(searchValue, eClassName)
         if (eClassName === searchValue) {
           item.checked = true;
         } 
       }
+    };
+    type Words = {
+      [key: string]: string
+    }
+    const position_class_name:Words = {
+      "G" : "guard",
+      "G-F" : "guard-forward",
+      "F" : "forward",
+      "F-G" : "forward-guard",
+      "F-C" : "forward-center",
+      "C" : "center",
+      "C-F" : "center-forward"
     };
 
     useDidMountEffect ((): void => {
@@ -38,8 +51,9 @@ const Information: React.FC = () => {
         const response = await axios.get("/nba/players.json");
         const player_data = response["data"];
         for (let info of player_data) {
-          _check.push(<input className="checkbox-guard" id={`${info["name"]}`} type="radio" name="checkbox" defaultChecked={false}/>);
-          _cards.push(<div className="project guard" style={{ 
+          const position = info["position"];
+          _check.push(<input className={`checkbox-${position_class_name[position]}`} id={`${info["name"]}`} type="radio" name="checkbox" defaultChecked={false}/>);
+          _cards.push(<div className={`project ${position_class_name[position]}`} style={{ 
             backgroundImage: `url(${info["image"]})` ,
             backgroundRepeat: "round"
           }}></div>);
