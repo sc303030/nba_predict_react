@@ -128,8 +128,16 @@ border-radius: 4px;
 box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
 -webkit-transition: all 0.2s linear;
 transition: all 0.3s linear;
+position:relative;
 }
 
+.project > span {
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+}
 .project.guard {
 border: 3px solid red;
 }
@@ -193,9 +201,7 @@ opacity: 1;
 min-height: 140px;
 min-width: calc(25% - 28px);
 padding: 0 10px;
-margin-left: 10px;
-margin-right: 10px;
-margin-top: 20px;
+margin: 20px 10px 45px 10px;
 visibility: visible;
 transform: scale(1);
 border-width: 3px;

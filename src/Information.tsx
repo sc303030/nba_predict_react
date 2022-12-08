@@ -56,7 +56,7 @@ const Information: React.FC = () => {
           _cards.push(<div className={`project ${position_class_name[position]}`} style={{ 
             backgroundImage: `url(${info["image"]})` ,
             backgroundRepeat: "round"
-          }}></div>);
+          }}><span>{`${info["name"]}`}</span></div>);
         }
         setcheckbox_list(_check);
         setcards_list(_cards);
