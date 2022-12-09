@@ -5,6 +5,8 @@ import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import {
     useRecoilValue,
   } from 'recoil';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { UncontrolledCollapse, CardBody, Card } from 'reactstrap';
 import {selectValueState} from './SelectValue';
 import { useDidMountEffect } from "./useDidMountEffect";
 import axios from 'axios';
@@ -43,21 +45,35 @@ const Information: React.FC = () => {
     const onChange = (e: CheckboxChangeEvent) => {
         console.log(`checked = ${e.target.checked}`);
       };
-
+    const playerChange = (key: string | string[]) => {
+      console.log(key);
+    };
     async function getPlayers() {
       try{
         let _check = []
         let _cards  = []
         const response = await axios.get("/nba/players.json");
         const player_data = response["data"];
+        let cnt = 0;
         for (let info of player_data) {
           const position = info["position"];
-          _check.push(<input className={`checkbox-${position_class_name[position]}`} id={`${info["name"]}`} type="radio" name="checkbox" defaultChecked={false}/>);
-          _cards.push(<div className={`project ${position_class_name[position]}`} style={{ 
+          const player_name = info["name"].replace(/\s|'/gi, "_");
+          _check.push(<input className={`checkbox-${position_class_name[position]}`} id={`${player_name}`} type="radio" name="checkbox" defaultChecked={false}/>);
+          _cards.push(<div><div className={`project ${position_class_name[position]}`}  id={player_name} style={{ 
             backgroundImage: `url(${info["image"]})` ,
             backgroundRepeat: "round"
-          }}><span>{`${info["name"]}`}</span></div>);
+          }}><span>{`${player_name}`}</span>  
+          </div>
+          <UncontrolledCollapse toggler={`#${player_name}`} key={player_name}>
+            <Card>
+                <CardBody>
+                    리액트 나도 할 수 있다! 뚝딱~!
+                </CardBody>
+            </Card>
+          </UncontrolledCollapse>
+          </div>);
         }
+        
         setcheckbox_list(_check);
         setcards_list(_cards);
       } catch (error){
@@ -70,13 +86,13 @@ const Information: React.FC = () => {
     return (
 
         <div className="wrapper">
-        <div className="container">
-            <input className="checkbox-all" id="all" type="radio" name="checkbox" defaultChecked={true}/>
-            {checkbox_list}
-            <div className="cards">
-              {cards_list}
-            </div>
-        </div>
+          <div className="container">
+              <input className="checkbox-all" id="all" type="radio" name="checkbox" defaultChecked={true}/>
+              {checkbox_list}
+              <div className="cards">
+                {cards_list}
+              </div>
+          </div>
         </div>
     )
 
