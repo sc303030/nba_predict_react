@@ -19,7 +19,6 @@ const Information: React.FC = () => {
       for (let  item of checkboxlist as any) {
         item.checked = false;
         const eClassName:String = item.getAttribute('class');
-        console.log(searchValue, eClassName)
         if (eClassName === searchValue) {
           item.checked = true;
         } 
@@ -54,7 +53,6 @@ const Information: React.FC = () => {
         let _cards  = []
         const response = await axios.get("/nba/players.json");
         const player_data = response["data"];
-        let cnt = 0;
         for (let info of player_data) {
           const position = info["position"];
           const player_name = info["name"].replace(/\s|'/gi, "_");
@@ -67,7 +65,11 @@ const Information: React.FC = () => {
           <UncontrolledCollapse toggler={`#${player_name}`} key={player_name} className="collapes-card">
             <Card>
                 <CardBody>
-                    리액트 나도 할 수 있다! 뚝딱~!
+                    <p>{`나이 : ${info['age']}세`}</p>
+                    <p>{`부상횟수 : ${info['injury_count']}회`}</p>
+                    <p>{`포지션 : ${position}`}</p>
+                    <p>{`은퇴년도 : ${info['retire_year']}년`}</p>
+                    <p>{`선수 기간 : ${info['season']}년`}</p>
                 </CardBody>
             </Card>
           </UncontrolledCollapse>

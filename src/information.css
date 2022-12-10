@@ -218,6 +218,10 @@ border-width: 3px;
     width: 180px;
     margin: auto;
 }
+
+.collapes-card > div > div >p:last-child {
+    margin-bottom: 0px;
+}
 @media only screen and (max-width: 650px) {
 .container {
     width: 100%;
