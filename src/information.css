@@ -121,7 +121,9 @@ display: flex;
 flex-wrap: wrap;
 width: 800px;
 justify-content: space-between;
+margin: auto;
 }
+
 
 .project {
 border-radius: 4px;
@@ -183,6 +185,11 @@ visibility: hidden;
 border-width: 0;
 }
 
+.each-card {
+    min-width: calc(25%);
+}
+
+
 .checkbox-all:checked ~ .cards .project.guard,
 .checkbox-all:checked ~ .cards .project.guard-forward,
 .checkbox-all:checked ~ .cards .project.forward,
@@ -200,13 +207,17 @@ border-width: 0;
 opacity: 1;
 min-height: 140px;
 min-width: calc(25% - 28px);
-padding: 0 10px;
 margin: 20px 10px 45px 10px;
 visibility: visible;
 transform: scale(1);
 border-width: 3px;
 }
 
+
+.collapes-card {
+    width: 180px;
+    margin: auto;
+}
 @media only screen and (max-width: 650px) {
 .container {
     width: 100%;

@@ -59,12 +59,12 @@ const Information: React.FC = () => {
           const position = info["position"];
           const player_name = info["name"].replace(/\s|'/gi, "_");
           _check.push(<input className={`checkbox-${position_class_name[position]}`} id={`${player_name}`} type="radio" name="checkbox" defaultChecked={false}/>);
-          _cards.push(<div><div className={`project ${position_class_name[position]}`}  id={player_name} style={{ 
+          _cards.push(<div className='each-card'><div className={`project ${position_class_name[position]}`}  id={player_name} style={{ 
             backgroundImage: `url(${info["image"]})` ,
             backgroundRepeat: "round"
           }}><span>{`${player_name}`}</span>  
           </div>
-          <UncontrolledCollapse toggler={`#${player_name}`} key={player_name}>
+          <UncontrolledCollapse toggler={`#${player_name}`} key={player_name} className="collapes-card">
             <Card>
                 <CardBody>
                     리액트 나도 할 수 있다! 뚝딱~!
