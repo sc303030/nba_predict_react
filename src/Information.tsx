@@ -54,10 +54,10 @@ const Information: React.FC = () => {
         const response = await axios.get("/nba/players.json");
         const player_data = response["data"];
         for (let info of player_data) {
-          const position = info["position"];
+          const position = position_class_name[info["position"]];
           const player_name = info["name"].replace(/\s|'/gi, "_");
-          _check.push(<input className={`checkbox-${position_class_name[position]}`} id={`${player_name}`} type="radio" name="checkbox" defaultChecked={false}/>);
-          _cards.push(<div className='each-card'><div className={`project ${position_class_name[position]}`}  id={player_name} style={{ 
+          _check.push(<input className={`checkbox-${position}`} id={`${player_name}`} type="radio" name="checkbox" defaultChecked={false}/>);
+          _cards.push(<div className={`each-card ${position}`}><div className={`project ${position}`}  id={player_name} style={{ 
             backgroundImage: `url(${info["image"]})` ,
             backgroundRepeat: "round"
           }}><span>{`${player_name}`}</span>  

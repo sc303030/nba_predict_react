@@ -187,8 +187,29 @@ border-width: 0;
 
 .each-card {
     min-width: calc(25%);
+    display: none;
 }
 
+
+
+.checkbox-all:checked ~ .cards .each-card,
+.checkbox-guard:checked ~ .cards .each-card.guard,
+.checkbox-guard-forward:checked ~ .cards .each-card.guard-forward,
+.checkbox-forward:checked ~ .cards .each-card.forward,
+.checkbox-forward-guard:checked ~ .cards .each-card.forward-guard,
+.checkbox-forward-center:checked ~ .cards .each-card.forward-center,
+.checkbox-center:checked ~ .cards .each-card.center,
+.checkbox-center-forward:checked ~ .cards .each-card.center-forward 
+{
+    display: block;
+    opacity: 1;
+    min-height: 140px;
+    min-width: calc(25% - 28px);
+    margin: 20px 10px 45px 10px;
+    visibility: visible;
+    transform: scale(1);
+    border-width: 3px;
+}
 
 .checkbox-all:checked ~ .cards .project.guard,
 .checkbox-all:checked ~ .cards .project.guard-forward,
