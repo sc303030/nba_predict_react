@@ -117,20 +117,18 @@ height: 30px;
 }
 
 .cards {
-display: flex;
-flex-wrap: wrap;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
 width: 800px;
-justify-content: space-between;
 margin: auto;
 }
 
 
 .project {
-border-radius: 4px;
-box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
--webkit-transition: all 0.2s linear;
-transition: all 0.3s linear;
-position:relative;
+    display: none;
+    border-radius: 4px;
+    box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+    position:relative;
 }
 
 .project > span {
@@ -177,39 +175,31 @@ border: 3px solid blue;
 .project.center,
 .project.center-forward
  {
-opacity: 0;
-transform: scale(0);
-padding: 0;
-margin: 0;
-visibility: hidden;
-border-width: 0;
-}
-
-.each-card {
-    min-width: calc(25%);
     display: none;
 }
 
-
+.each-card {
+    display: none;
+}
 
 .checkbox-all:checked ~ .cards .each-card,
+.checkbox-all:checked ~ .cards .each-card.guard,
+.checkbox-all:checked ~ .cards .each-card.guard-forward,
+.checkbox-all:checked ~ .cards .each-card.forward,
+.checkbox-all:checked ~ .cards .each-card.forward-guard,
+.checkbox-all:checked ~ .cards .each-card.forward-center,
+.checkbox-all:checked ~ .cards .each-card.center,
+.checkbox-all:checked ~ .cards .each-card.center-forward,
 .checkbox-guard:checked ~ .cards .each-card.guard,
 .checkbox-guard-forward:checked ~ .cards .each-card.guard-forward,
 .checkbox-forward:checked ~ .cards .each-card.forward,
 .checkbox-forward-guard:checked ~ .cards .each-card.forward-guard,
 .checkbox-forward-center:checked ~ .cards .each-card.forward-center,
 .checkbox-center:checked ~ .cards .each-card.center,
-.checkbox-center-forward:checked ~ .cards .each-card.center-forward 
-{
-    display: block;
-    opacity: 1;
-    min-height: 140px;
-    min-width: calc(25% - 28px);
-    margin: 20px 10px 45px 10px;
-    visibility: visible;
-    transform: scale(1);
-    border-width: 3px;
+.checkbox-center-forward:checked ~ .cards .each-card.center-forward {
+    display: block !important;
 }
+
 
 .checkbox-all:checked ~ .cards .project.guard,
 .checkbox-all:checked ~ .cards .project.guard-forward,
@@ -225,12 +215,9 @@ border-width: 0;
 .checkbox-forward-center:checked ~ .cards .project.forward-center,
 .checkbox-center:checked ~ .cards .project.center,
 .checkbox-center-forward:checked ~ .cards .project.center-forward {
-opacity: 1;
+display: block;
 min-height: 140px;
-min-width: calc(25% - 28px);
 margin: 20px 10px 45px 10px;
-visibility: visible;
-transform: scale(1);
 border-width: 3px;
 }
 

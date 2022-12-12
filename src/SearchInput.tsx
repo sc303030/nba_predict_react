@@ -7,6 +7,8 @@ const SearchInput = (): JSX.Element  => {
     const log_test = (val:string) => {
       const searchValue:string = val.toUpperCase();
       const checkboxlist : any  = document.getElementsByClassName('each-card');
+      const checkbox_all:any = document.getElementsByClassName('checkbox-all');
+      checkbox_all[0].checked = true;
       for (let  item of checkboxlist as any) {
         const player_name:String = item.childNodes[0].getAttribute('id');
         if (searchValue === "") {
@@ -14,7 +16,7 @@ const SearchInput = (): JSX.Element  => {
         } else if (player_name.toUpperCase().indexOf(searchValue) > -1) {
           item.style.display = "block";
         } else {
-          item.style.display = "none";
+          item.style = "display:none !important";
         }
       }
     };

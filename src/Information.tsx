@@ -14,6 +14,10 @@ const Information: React.FC = () => {
     const searchValue = useRecoilValue<string>(selectValueState);
     const [checkbox_list, setcheckbox_list] = useState<any []>([]);
     const [cards_list, setcards_list] = useState<any []>([]);
+    const eachcard : any  = document.getElementsByClassName('each-card');
+    for (let  item of eachcard as any) {
+      item.style.display = "none";
+    }
     const boxChange =() => {
       const checkboxlist : NodeListOf<Element>  = document.getElementsByName('checkbox');
       for (let  item of checkboxlist as any) {
